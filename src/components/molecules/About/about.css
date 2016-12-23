@@ -1,0 +1,11 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1050px;
+}
+
+.about__separator {
+  padding: 80px 0px;
+}

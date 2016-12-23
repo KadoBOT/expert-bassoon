@@ -1,0 +1,12 @@
+.clients {
+  display: flex;
+  justify-content: space-between;
+  width: 1375px;
+  flex-wrap: wrap;
+  margin-top: 70px;
+}
+
+.clients > p {
+  width: 100%;
+  margin: 100px 0px;
+}

@@ -1,0 +1,17 @@
+.content {
+  display: flex;
+  padding: 70px;
+}
+
+.content--left {
+  flex: 2.5;
+  margin-right: 30px;
+}
+
+.content--left > p {
+  text-align: left;
+}
+
+.content--right {
+  flex: 2;
+}

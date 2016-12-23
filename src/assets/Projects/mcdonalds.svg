@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="141px" height="125px" viewBox="0 0 141 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-230.000000, -1260.000000)" fill="#FFC300">
+            <g id="content" sketch:type="MSLayerGroup" transform="translate(90.000000, 560.000000)">
+                <g id="relevant-companies" transform="translate(81.000000, 352.187584)" sketch:type="MSShapeGroup">
+                    <g id="company-tiles" transform="translate(0.000000, 264.140688)">
+                        <g id="first-row">
+                            <g id="mcdonalds-tile">
+                                <g id="mcdonalds-logo" transform="translate(59.000000, 83.998763)">
+                                    <path d="M100.853183,9.32717452 C112.953138,9.32717452 122.763155,60.9543686 122.763155,124.640293 L140.295489,124.640293 C140.295489,56.0538366 122.634035,0.455521718 100.853183,0.455521718 C88.4597256,0.455521718 77.4036211,17.164982 70.1734131,43.2939806 C62.9463164,17.164982 51.8860635,0.455521718 39.4941621,0.455521718 C17.7133096,0.455521718 0.04978125,56.0538366 0.04978125,124.640293 L17.5841895,124.640293 C17.5841895,60.9543686 27.3957627,9.32717452 39.4941621,9.32717452 C51.5961914,9.32717452 61.4103574,56.9832479 61.4103574,115.773888 L78.938543,115.773888 C78.9390615,56.9832479 88.7501162,9.32717452 100.853183,9.32717452" id="Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

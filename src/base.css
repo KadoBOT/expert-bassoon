@@ -1,0 +1,12 @@
+* {
+  margin:0;
+  padding:0;
+  list-style:none;
+  vertical-align:baseline;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#root {
+  background: #f2f4f6;
+}

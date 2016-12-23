@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Counter from '../containers/Counter'
+import Template from './templates'
 
-const App = () => <Counter />
+const App = () => <Template />
 
 export default App

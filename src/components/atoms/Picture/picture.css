@@ -1,0 +1,15 @@
+.picture__almere {
+  background: url('../../../assets/About/almere-city.png');
+  width: 100%;
+  height: 680px;
+  background-size: cover;
+  margin-bottom: -160px;
+}
+
+.picture__barcelona {
+  background: url('../../../assets/About/bcn-city.png');
+  width: 100%;
+  height: 680px;
+  background-size: cover;
+  margin-bottom: -160px;
+}

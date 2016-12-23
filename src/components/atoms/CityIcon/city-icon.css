@@ -1,0 +1,15 @@
+.city-icon {
+  width: 230px;
+  height: 266px;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  margin-bottom: 32px;
+}
+
+.city-icon__almere {
+  background: url('../../../assets/About/almere-logo.png');
+}
+
+.city-icon__barcelona {
+  background: url('../../../assets/About/bcn-logo.png');
+}

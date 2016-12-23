@@ -1,0 +1,14 @@
+.text-columns {
+  display: flex;
+  margin: 60px 0px 100px 0px;
+}
+
+.text-columns > p {
+  padding: 0px 60px;
+  text-align: left;
+  flex: 1;
+}
+
+.text-columns > p:not(:first-child) {
+  border-left: 1px solid rgba(214, 83, 112, 0.13);
+}
