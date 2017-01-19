@@ -1,8 +1,8 @@
-import React, {PropTypes} from 'react'
-import counter from './counter'
+import React from 'react';
+import counter from './counter';
 
-const { Counter } = counter
+const { Counter } = counter;
 
-const App = () => <Counter />
+const App = () => <Counter />;
 
-export default App
+export default App;
