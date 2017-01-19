@@ -1,3 +1,5 @@
+/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+
 import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -7,7 +9,7 @@ import * as actions from '../actions';
 class Counter extends React.Component {
   componentDidMount() {
     const css = 'background: #222; color: #bada55; font-size: 32px;';
-    console.log(`%c\nInitial State: ${this.props.counter}\n\n`, css);
+    console.warn(`%c\nInitial State: ${this.props.counter}\n\n`, css);
   }
 
   render() {
