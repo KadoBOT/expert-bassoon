@@ -1,0 +1,11 @@
+[ignore]
+./config
+./public
+./scripts
+<PROJECT_ROOT>/node_modules/fbjs
+
+[include]
+
+[libs]
+
+[options]
