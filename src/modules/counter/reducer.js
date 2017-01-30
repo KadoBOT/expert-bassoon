@@ -7,6 +7,6 @@ import * as actions from './actions';
 const initialState = 0;
 
 export default createReducer({
-  [actions.counterLog]: (state) => { console.warn(state); return state; },
+  [actions.counterLog]: (state) => { console.warn('state: ', state); return state; },
   [actions.addOne]: state => state + 1,
 }, initialState);

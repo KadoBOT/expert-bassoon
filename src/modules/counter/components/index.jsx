@@ -2,44 +2,38 @@
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import {
+  compose,
+  onlyUpdateForPropTypes,
+  pure,
+  setPropTypes,
+  withReducer,
+  withPropsOnChange,
+} from 'recompose';
 
 import * as actions from '../actions';
+import counterReducer from '../reducer';
 
-type Props = {
-  counter: number,
-  addOne: () => void,
-  counterLog: () => void
-};
+const enhance = compose(
+  pure,
+  onlyUpdateForPropTypes,
+  setPropTypes({
+    counter: React.PropTypes.number,
+    addOne: React.PropTypes.func,
+    counterLog: React.PropTypes.func,
+  }),
+  withPropsOnChange(['counter'], ({ counter }) => ({ counter })),
+  withReducer('counter', 'dispatch', counterReducer),
+);
 
-class Counter extends React.Component {
-  componentDidMount() {
-    const css = 'background: #222; color: #bada55; font-size: 32px;';
-    console.warn(`%c\nInitial State: ${this.props.counter}\n\n`, css);
-  }
+const Counter = enhance(({ counter, dispatch }) => (
+  <div>
+    <h1>Counter module</h1>
+    <p>{counter}!!!</p>
+    <button onClick={() => dispatch({ type: actions.addOne })}>Inc</button>
+    <hr />
+    <button onClick={() => dispatch({ type: actions.counterLog })}>Log Counter State</button>
+  </div>
+));
 
-  props: Props;
-
-  render() {
-    return (
-      <div>
-        <h1>Counter module</h1>
-        <p>{JSON.stringify(this.props.counter)}</p>
-        <button onClick={this.props.addOne}>Inc</button>
-        <hr />
-        <button onClick={this.props.counterLog}>Log State</button>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = state => state;
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  addOne: actions.addOne,
-  counterLog: actions.counterLog,
-}, dispatch);
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default Counter;
