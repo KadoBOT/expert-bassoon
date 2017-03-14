@@ -18,8 +18,6 @@ const enhance = compose(
   onlyUpdateForPropTypes,
   setPropTypes({
     counter: React.PropTypes.number,
-    addOne: React.PropTypes.func,
-    counterLog: React.PropTypes.func,
   }),
   withPropsOnChange(['counter'], ({ counter }) => ({ counter })),
 );
