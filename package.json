@@ -50,6 +50,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "@cycle/run": "^3.0.0",
     "ramda": "^0.22.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -57,7 +58,9 @@
     "recompose": "^0.22.0",
     "redux": "^3.6.0",
     "redux-act": "^1.1.0",
-    "redux-thunk": "^2.1.0"
+    "redux-cycles": "^0.4.0",
+    "redux-thunk": "^2.2.0",
+    "xstream": "^10.3.0"
   },
   "scripts": {
     "start": "node scripts/start.js",

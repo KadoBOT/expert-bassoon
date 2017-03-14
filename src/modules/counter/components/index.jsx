@@ -1,38 +1,31 @@
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+/* eslint immutable/no-mutation: 0 */
 
 import React from 'react';
-import {
-  compose,
-  onlyUpdateForPropTypes,
-  pure,
-  setPropTypes,
-  withReducer,
-  withPropsOnChange,
-} from 'recompose';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import * as actions from '../actions';
-import counterReducer from '../reducer';
 
-const enhance = compose(
-  pure,
-  onlyUpdateForPropTypes,
-  setPropTypes({
-    counter: React.PropTypes.number,
-    addOne: React.PropTypes.func,
-    counterLog: React.PropTypes.func,
-  }),
-  withPropsOnChange(['counter'], ({ counter }) => ({ counter })),
-  withReducer('counter', 'dispatch', counterReducer),
+const Counter = ({ counter, increment, decrement }) => (
+  <div>
+    <h1>{counter}</h1>
+    <button onClick={increment}>+</button>
+    <button onClick={decrement}>-</button>
+  </div>
 );
 
-const Counter = enhance(({ counter, dispatch }) => (
-  <div>
-    <h1>Counter module</h1>
-    <p>{counter}!!!</p>
-    <button onClick={() => dispatch({ type: actions.addOne })}>Inc</button>
-    <hr />
-    <button onClick={() => dispatch({ type: actions.counterLog })}>Log Counter State</button>
-  </div>
-));
+const mapStateToProps = state => state;
 
-export default Counter;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  increment: actions.addOne$,
+  decrement: actions.removeOne$,
+}, dispatch);
+
+Counter.propTypes = {
+  counter: React.PropTypes.number.isRequired,
+  increment: React.PropTypes.func.isRequired,
+  decrement: React.PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

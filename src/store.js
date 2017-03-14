@@ -1,12 +1,18 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { run } from '@cycle/run';
+import { createCycleMiddleware } from 'redux-cycles';
+
+import main from './modules/counter/actions';
 import rootReducer from './modules/rootReducer';
+
+const cycleMiddleware = createCycleMiddleware();
+const { makeActionDriver } = cycleMiddleware;
 
 const configureStore = (preloadedState) => {
   const store = createStore(
     rootReducer,
     preloadedState, // the initial state if any
-    applyMiddleware(thunk),
+    applyMiddleware(cycleMiddleware),
   );
 
   if (module.hot) {
@@ -16,6 +22,10 @@ const configureStore = (preloadedState) => {
       store.replaceReducer(nextRootReducer);
     });
   }
+
+  run(main, {
+    ACTION: makeActionDriver(),
+  });
 
   return store;
 };
