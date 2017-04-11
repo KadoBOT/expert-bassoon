@@ -2,8 +2,27 @@
 
 import React, { PropTypes } from 'react';
 import { observer } from 'mobx-react';
+import {
+  compose,
+  onlyUpdateForPropTypes,
+  pure,
+  setPropTypes,
+} from 'recompose';
 
-const Counter = ({ store }) => (
+const enhance = compose(
+  pure,
+  observer,
+  onlyUpdateForPropTypes,
+  setPropTypes({
+    store: PropTypes.shape({
+      count: PropTypes.number.isRequired,
+      increase: PropTypes.func.isRequired,
+      decrease: PropTypes.func.isRequired,
+    }).isRequired,
+  }),
+);
+
+const Counter = enhance(({ store }) => (
   <div>
     <h1>Counter module</h1>
     <p>{store.count}!!!</p>
@@ -11,14 +30,6 @@ const Counter = ({ store }) => (
     <hr />
     <button onClick={store.decrease}>Dec</button>
   </div>
-);
+));
 
-Counter.propTypes = {
-  store: PropTypes.shape({
-    count: PropTypes.number.isRequired,
-    increase: PropTypes.func.isRequired,
-    decrease: PropTypes.func.isRequired,
-  }).isRequired,
-};
-
-export default observer(Counter);
+export default Counter;
