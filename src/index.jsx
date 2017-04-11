@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 
-import configureStore from './store';
-import App from './modules/';
+import Store from './store';
+import Counter from './counter/';
 
-const store = configureStore();
+const store = new Store();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Counter store={store} />,
   document.getElementById('root'),
 );

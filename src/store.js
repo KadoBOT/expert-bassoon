@@ -1,23 +1,14 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './modules/rootReducer';
+import { observable, action } from 'mobx';
 
-const configureStore = (preloadedState) => {
-  const store = createStore(
-    rootReducer,
-    preloadedState, // the initial state if any
-    applyMiddleware(thunk),
-  );
+class CounterStore {
+  @observable count = 0
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./modules/rootReducer', () => {
-      const nextRootReducer = require('./modules/rootReducer').default; // eslint-disable-line global-require
-      store.replaceReducer(nextRootReducer);
-    });
+  @action increase = () => {
+    this.count = this.count + 1;
   }
+  @action decrease = () => {
+    this.count = this.count - 1;
+  }
+}
 
-  return store;
-};
-
-export default configureStore;
+export default CounterStore;
